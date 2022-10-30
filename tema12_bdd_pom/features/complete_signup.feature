@@ -9,8 +9,8 @@ Feature: Complete signup
     And I input correct last name
     And I click continue button
     And I input wrong email
-    Then I verify error message
-    When I clear email input
+    And I verify error message
+    And I clear email input
     And I input correct email
     Then I verify that error is not displayed anymore
 

@@ -26,7 +26,7 @@ def step_impl(context):
     context.complete_signup.input_wrong_email()
 
 
-@then('I verify error message')
+@when('I verify error message')
 def step_impl(context):
     assert context.complete_signup.verify_error() == "Please enter a valid email address."
 
