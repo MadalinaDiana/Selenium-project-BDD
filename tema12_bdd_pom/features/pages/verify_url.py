@@ -2,7 +2,7 @@ from pages.base_page import BasePage
 from selenium.webdriver.common.by import By
 
 
-class SignUpPage(BasePage):
+class VerifyUrl(BasePage):
     URL = "https://jules.app/sign-up"
 
     def go_to(self, url_text):

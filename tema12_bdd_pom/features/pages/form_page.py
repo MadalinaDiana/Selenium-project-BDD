@@ -13,13 +13,15 @@ class FormPage(BasePage):
     def input_email(self, email):
         self.driver.find_element(*self.EMAIL_SELECTOR).send_keys(email)
 
-    def leave_pass_empty(self):
+    def write_pass(self):
         self.driver.find_element(*self.PASSWORD_SELECTOR).send_keys('ceva')
 
-    def check_error_message_after_delete_password(self):
+    def delete_password(self):
         password_element = self.driver.find_element(*self.PASSWORD_SELECTOR)
         password_element.send_keys(Keys.COMMAND + "a")
         password_element.send_keys(Keys.DELETE)
+
+    def check_error_message_after_delete_password(self):
         message_text = self.driver.find_element(By.XPATH, '//*[@id="root"]/div/div[2]/form/div/div[2]/div/p').text
         return message_text
 

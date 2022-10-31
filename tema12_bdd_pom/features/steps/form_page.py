@@ -1,7 +1,7 @@
 from behave import *
 
 
-@Given('I am on the Jules App')
+@Given('I am on the Jules App-sign-in')
 def step_impl(context):
     context.form_page.go_home()
 
@@ -11,9 +11,14 @@ def step_impl(context):
     context.form_page.input_email('mada@yahoo.com')
 
 
-@When('I leave pass empty')
+@When('I write a password')
 def step_impl(context):
-    context.form_page.leave_pass_empty()
+    context.form_page.write_pass()
+
+
+@When('I clear the password')
+def step_impl(context):
+    context.form_page.delete_password()
 
 
 @Then('Message error is displayed')
