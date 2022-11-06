@@ -13,5 +13,6 @@ class Browser:
     def get_current_url(self):
         return self.driver.current_url
 
+
     def close(self):
         self.driver.quit()

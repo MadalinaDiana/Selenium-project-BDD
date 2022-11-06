@@ -1,5 +1,5 @@
 from behave import *
-
+import time
 @when('I click personal value')
 def step_impl(context):
     context.complete_signup.click_personal()
@@ -8,7 +8,7 @@ def step_impl(context):
 @when('I click continue button')
 def step_impl(context):
     context.complete_signup.continue_button().click()
-
+    time.sleep(2)
 
 @when('I input correct first name')
 def step_impl(context):
@@ -34,4 +34,3 @@ def step_impl(context, text):
 @then(u'I verify the "Please enter a valid email address." is not displayed')
 def step_impl(context):
     assert context.complete_signup.verify_error()[0] is False
-

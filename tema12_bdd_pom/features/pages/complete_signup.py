@@ -1,11 +1,10 @@
-from pages.base_page import BasePage
+from features.pages.base_page import BasePage
 from selenium.common import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 
 class CompleteSign(BasePage):
-    EMAIL_SELECTOR = (By.XPATH, '//*[@id="root"]/div/div[4]/div[2]/div/div[2]/div/div/input')
 
     def click_personal(self):
         self.driver.find_element(By.XPATH, "//input[@value='personal']").click()
@@ -29,6 +28,3 @@ class CompleteSign(BasePage):
         else:
             text = "NoSuchElement"
         return displayed, text
-
-
-
